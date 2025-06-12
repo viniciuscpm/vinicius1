@@ -12,7 +12,7 @@ const legendas = [
   "Independentemente do humor e da fase que estivermos vivendo, está sempre à disposição pra me dar o privilégio de te admirar numa noite do fim do verão (até tê-la, eu nem sabia que era disso que eu precisava)",
   "Gosto de projetar o futuro em devaneio e, só de imaginar ter sua presença em todas as noites de oscar, seja num bar qualquer, no conforto de casa ou viajando; me sinto aconchegado",
   "O mais interessante é que pra mim caiu a ficha de que, além de ser companhia para todos os momentos, eu FINALMENTE encontrei a pessoa que me conforta num festival de samba debaixo de chuva no rio de janeiro, aquela parada que parecia ser só pela música e pelo lazer, começa a fazer sentido",
-  "! ALERTA ! Eu sou do tipo de pessoa que duvida de tudo, mas contigo as coisas são reais. Achei que fosse inconcebível uma realidade na qual eu fosse tão pleno. Pra mim essa plenitude tá em coisas do tipo matar os insetos pra você, dormir agarrado de domingo pra segunda acordar cedinho, ficar na sua portaria o máximo de tempo enrolando pra não ir embora. Você ressignificou as músicas de amor pra mim e me mostrou que ao invés de duvidar de tudo, eu tenho que acreditar no amor e no tempo. (não é possível que a gente não tenha ficado juntos em julho de 2022 sem motivo, e, por hironia do destino voltamos a nos ver mais de 2 anos depois). Enfim, dito isso tudo com esse vídeo repetindo, acho que já da pra dizer que EU TE AMO, (você ja disse umas 10 vezes pelo menos, ja ta ficando unilateral, emocionada!) arrasta mais uma pro lado aí."
+  "! ALERTA ! Eu sou do tipo de pessoa que duvida de tudo, mas contigo as coisas são reais. Achei que fosse inconcebível uma realidade na qual eu fosse tão pleno. Pra mim essa plenitude tá em coisas do tipo matar os insetos pra você, dormir agarrado de domingo pra segunda acordar cedinho, ficar na sua portaria o máximo de tempo enrolando pra não ir embora. Você ressignificou as músicas de amor pra mim e me mostrou que ao invés de duvidar de tudo, eu tenho que acreditar no amor e no tempo. (não é possível...
 ];
 
 let index = 0;
@@ -31,9 +31,24 @@ function atualizarCarrossel() {
   const item = document.createElement("div");
   item.className = "carrossel-item active";
 
-  const img = document.createElement("img");
   const num = (index + 1).toString().padStart(2, "0");
-  img.src = `img/${num}.jpg`;
+
+  // Criar mídia: imagem ou vídeo na última
+  if (index === 12) {
+    const video = document.createElement("video");
+    video.src = `img/13.mp4`;
+    video.controls = true;
+    video.loop = true;
+    video.autoplay = true;
+    video.muted = false;
+    video.style.maxHeight = "400px";
+    item.appendChild(video);
+  } else {
+    const img = document.createElement("img");
+    img.src = `img/${num}.jpg`;
+    img.alt = `Foto ${num}`;
+    item.appendChild(img);
+  }
 
   const legenda = document.createElement("p");
   legenda.className = "legenda";
@@ -43,7 +58,6 @@ function atualizarCarrossel() {
   legenda.style.textOverflow = "unset";
   legenda.style.maxWidth = "90%";
 
-  item.appendChild(img);
   item.appendChild(legenda);
   container.appendChild(item);
 
@@ -55,7 +69,7 @@ function atualizarCarrossel() {
 
 function responder(aceitou) {
   if (aceitou) {
-    alert("💖 Eu sabia! Agora somos oficialmente namorados!");
+    alert("Te amo! Agora somos oficialmente namorados!");
   } else {
     document.getElementById("perguntaFinal").style.display = "none";
     document.getElementById("erroResposta").style.display = "block";
