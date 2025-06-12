@@ -37,10 +37,10 @@ function atualizarCarrossel() {
   if (index === 12) {
     const video = document.createElement("video");
     video.src = `img/13.mp4`;
-    video.controls = true;
+    video.controls = false;
     video.loop = true;
     video.autoplay = true;
-    video.muted = false;
+    video.muted = true;
     video.style.maxHeight = "400px";
     item.appendChild(video);
   } else {
@@ -61,7 +61,7 @@ function atualizarCarrossel() {
   item.appendChild(legenda);
   container.appendChild(item);
 
-  if (index === 12) {
+  if (index === 13) {
     document.getElementById("carrosselContainer").style.display = "none";
     document.getElementById("perguntaFinal").style.display = "block";
   }
