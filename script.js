@@ -83,7 +83,7 @@ function voltar() {
 
 document.getElementById("startButton").onclick = mostrarCarrossel;
 document.getElementById("next").onclick = () => {
-  if (index < legendas.length - 1) {
+  if (index < legendas.length) {
     index++;
     atualizarCarrossel();
   }
