@@ -1,0 +1,75 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+#inicio {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  border: none;
+  background-color: pink;
+  color: black;
+  cursor: pointer;
+}
+
+#carrosselContainer {
+  position: relative;
+}
+
+#carrossel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.carrossel-item {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carrossel-item.active {
+  display: flex;
+}
+
+.carrossel-item img {
+  max-width: 90%;
+  max-height: 60vh;
+  border-radius: 20px;
+}
+
+.legenda {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.controls {
+  margin-top: 1rem;
+}
+
+#perguntaFinal h2 {
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+
+#perguntaFinal span {
+  font-weight: bold;
+  color: pink;
+  font-size: 2.5rem;
+}

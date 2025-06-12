@@ -1,13 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para Louise ❤️</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    teste
+  <div id="inicio">
+    <button id="startButton">Clique aqui!</button>
+  </div>
 
-    vai tomar no cu rafous
+  <audio id="musica" loop>
+    <source src="audio/best-part.mp3" type="audio/mpeg" />
+    Seu navegador não suporta o áudio.
+  </audio>
+
+  <div id="carrosselContainer" style="display: none;">
+    <div id="carrossel"></div>
+    <div class="controls">
+      <button id="prev">⬅️</button>
+      <button id="next">➡️</button>
+    </div>
+  </div>
+
+  <div id="perguntaFinal" style="display: none;">
+    <h2><span>N</span><span>A</span><span>M</span><span>O</span><span>R</span><span>A</span> <span>C</span><span>O</span><span>M</span><span>I</span><span>G</span><span>O</span><span>?</span></h2>
+    <button onclick="responder(true)">Lógico, né</button>
+    <button onclick="responder(false)">Sai fora</button>
+  </div>
+
+  <div id="erroResposta" style="display: none;">
+    <p>❌ Resposta errada, volte e responda de novo.</p>
+    <button onclick="voltar()">Voltar</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
